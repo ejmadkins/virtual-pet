@@ -4,7 +4,7 @@ A virtual pet made using JavaScript.
 
 ## Installation
 
-Use Node Package Manager [npm](https://www.npmjs.com/) to install Virtual Pet.
+Use [Node Package Manager](https://www.npmjs.com/) to install Virtual Pet.
 
 ```bash
 npm install
