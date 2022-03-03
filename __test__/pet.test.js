@@ -6,6 +6,7 @@ describe("constructor", () => {
   });
 
   it("returns the name of the pet", () => {
-    expect(new Pet("Fido")).toBe("Fido");
+    const pet = new Pet("Fido");
+    expect(pet.name).toBe("Fido");
   });
 });
