@@ -74,4 +74,46 @@ describe("growUp", () => {
       expect(pet.hunger).toEqual(0);
     });
   });
+
+  describe("checkup", () => {
+    it("checkup when fitness is 3 or below and hunger is 5 or more", () => {
+      const pet = new Pet("fido");
+
+      pet.hunger = 7;
+      pet.fitness = 2;
+      pet.checkUp();
+
+      expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
+    });
+
+    it("checkup when fitness is 3 or less", () => {
+      const pet = new Pet("fido");
+
+      pet.fitness = 3;
+      pet.hunger = 4;
+      pet.checkUp();
+
+      expect(pet.checkUp()).toEqual("I need a walk");
+    });
+
+    it("checkup when hunger is 5 or more", () => {
+      const pet = new Pet("fido");
+
+      pet.hunger = 7;
+      pet.fitness = 4;
+      pet.checkUp();
+
+      expect(pet.checkUp()).toEqual("I am hungry");
+    });
+
+    it("checkup when fitness is 4 or above and hunger is 4 or below", () => {
+      const pet = new Pet("fido");
+
+      pet.hunger = 4;
+      pet.fitness = 4;
+      pet.checkUp();
+
+      expect(pet.checkUp()).toEqual("I feel great!");
+    });
+  });
 });
