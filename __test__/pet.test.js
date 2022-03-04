@@ -76,7 +76,7 @@ describe("growUp", () => {
   });
 
   describe("checkup", () => {
-    it("checkup when fitness is 3 or below and hunger is 5 or more", () => {
+    it("check state when fitness is 3 or below and hunger is 5 or more", () => {
       const pet = new Pet("fido");
 
       pet.hunger = 7;
@@ -86,7 +86,7 @@ describe("growUp", () => {
       expect(pet.checkUp()).toEqual("I am hungry AND I need a walk");
     });
 
-    it("checkup when fitness is 3 or less", () => {
+    it("check state when fitness is 3 or less", () => {
       const pet = new Pet("fido");
 
       pet.fitness = 3;
@@ -96,7 +96,7 @@ describe("growUp", () => {
       expect(pet.checkUp()).toEqual("I need a walk");
     });
 
-    it("checkup when hunger is 5 or more", () => {
+    it("check state when hunger is 5 or more", () => {
       const pet = new Pet("fido");
 
       pet.hunger = 7;
@@ -106,7 +106,7 @@ describe("growUp", () => {
       expect(pet.checkUp()).toEqual("I am hungry");
     });
 
-    it("checkup when fitness is 4 or above and hunger is 4 or below", () => {
+    it("check state when fitness is 4 or above and hunger is 4 or below", () => {
       const pet = new Pet("fido");
 
       pet.hunger = 4;
@@ -114,6 +114,28 @@ describe("growUp", () => {
       pet.checkUp();
 
       expect(pet.checkUp()).toEqual("I feel great!");
+    });
+  });
+
+  describe("isAlive", () => {
+    it("check to see if pet is alive", () => {
+      const pet = new Pet("fido");
+
+      pet.age = 29;
+      pet.fitness = 9;
+      pet.fitness = 1;
+
+      expect(pet.isAlive).toEqual(true);
+    });
+
+    it("check to see if pet is dead", () => {
+      const pet = new Pet("fido");
+
+      pet.age = 30;
+      pet.fitness = 10;
+      pet.fitness = 0;
+
+      expect(pet.isAlive).toEqual(false);
     });
   });
 });
