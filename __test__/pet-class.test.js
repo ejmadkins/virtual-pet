@@ -118,4 +118,14 @@ describe("growUp", () => {
       expect(pet.isAlive).toEqual(false);
     });
   });
+
+  describe("adoptChild", () => {
+    it("check to see if pet is alive", () => {
+      const parent = new Pet("Dave");
+      const child = new Pet("Amelia");
+
+      parent.adoptChild(child);
+      expect(parent.children).toEqual([ Pet { name: 'Amelia', children: [] } ]);
+    });
+  });
 });

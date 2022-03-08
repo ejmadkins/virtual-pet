@@ -8,6 +8,7 @@ class Pet {
     this.age = INIT_AGE;
     this.hunger = INIT_HUNGER;
     this.fitness = MAXIMUM_FITNESS;
+    this.children = [];
   }
 
   get isAlive() {
@@ -55,6 +56,10 @@ class Pet {
     } else {
       return `I feel great!`;
     }
+  }
+
+  adoptChild(child) {
+    this.children.push(child);
   }
 }
 
