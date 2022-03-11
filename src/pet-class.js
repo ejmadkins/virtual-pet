@@ -61,6 +61,11 @@ class Pet {
   adoptChild(child) {
     this.children.push(child);
   }
+
+  haveBaby(childName) {
+    const child = new Pet(childName);
+    this.children.push(child);
+  }
 }
 
 module.exports = Pet;
