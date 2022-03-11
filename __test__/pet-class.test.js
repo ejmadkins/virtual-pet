@@ -120,12 +120,37 @@ describe("growUp", () => {
   });
 
   describe("adoptChild", () => {
-    it("check to see if pet is alive", () => {
+    it("check to see if child object can be passed to parent", () => {
       const parent = new Pet("Dave");
       const child = new Pet("Amelia");
 
       parent.adoptChild(child);
-      expect(parent.children).toEqual([ Pet { name: 'Amelia', children: [] } ]);
+      expect(parent.children).toEqual([
+        {
+          name: "Amelia",
+          age: 0,
+          hunger: 0,
+          fitness: 10,
+          children: [],
+        },
+      ]);
+    });
+  });
+
+  describe("haveBaby", () => {
+    it("check to see if child object can be created by parent", () => {
+      const parent = new Pet("Dave");
+
+      parent.haveBaby("Amelia");
+      expect(parent.children).toEqual([
+        {
+          name: "Amelia",
+          age: 0,
+          hunger: 0,
+          fitness: 10,
+          children: [],
+        },
+      ]);
     });
   });
 });
